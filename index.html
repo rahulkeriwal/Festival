@@ -15,7 +15,6 @@
       position: relative;
       padding: 60px 20px;
     }
-
     .card {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 20px;
@@ -26,7 +25,6 @@
       position: relative;
       z-index: 2;
     }
-
     .card img {
       width: 100%;
       max-height: 300px;
@@ -34,35 +32,35 @@
       object-fit: cover;
       margin-bottom: 10px;
     }
-
-    #countdown {
-      font-size: 20px;
-      color: black;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #d35400;
-      margin-bottom: 8px;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin: 5px 0 15px;
-    }
-
     input {
       padding: 10px;
       border-radius: 10px;
       border: 1px solid #ccc;
       width: 80%;
       max-width: 300px;
-      margin-top: 20px;
+      margin: 15px 0;
       font-size: 16px;
     }
-
+    #countdown {
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #greetingLine {
+      color: brown;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #d35400;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 5px 0 15px;
+    }
     #rainbowName {
       font-size: 1.4em;
       font-weight: bold;
@@ -73,13 +71,11 @@
       animation: rainbow 3s infinite linear;
       user-select: none;
     }
-
     @keyframes rainbow {
       0% { filter: hue-rotate(0deg); }
       100% { filter: hue-rotate(360deg); }
     }
-
-    .rainbow-btn {
+    .btn {
       background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
       color: white;
       font-weight: bold;
@@ -92,21 +88,17 @@
       animation: rainbowBG 3s linear infinite;
       transition: box-shadow 0.3s ease;
       box-shadow: 0 0 8px rgba(255,255,255,0.7);
-      margin-top: 15px;
+      margin-top: 10px;
     }
-
-    .rainbow-btn:hover {
+    .btn:hover {
       box-shadow: 0 0 15px rgba(255,255,255,1);
     }
-
     @keyframes rainbowBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    /* ✅ WhatsApp Green Button */
-    button.share-btn {
+    .share-btn {
       background-color: #25D366 !important;
       color: white !important;
       font-weight: bold;
@@ -115,145 +107,105 @@
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
-      margin-top: 25px;
+      margin-top: 15px;
       box-shadow: 0 0 10px rgba(0, 128, 0, 0.4);
-      transition: background 0.3s, box-shadow 0.3s;
     }
-
-    button.share-btn:hover {
+    .share-btn:hover {
       background-color: #1ebe5d !important;
       box-shadow: 0 0 15px rgba(0, 128, 0, 0.8);
-    }
-
-    /* 🔥 Fire flying effect */
-    .fire {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: orange;
-      border-radius: 50%;
-      animation: fly 4s linear infinite;
-      opacity: 0.8;
-      z-index: 0;
-    }
-
-    @keyframes fly {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) scale(0.2);
-        opacity: 0;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔥 Fire flying particles -->
-  <script>
-    for(let i = 0; i < 50; i++) {
-      let fire = document.createElement("div");
-      fire.className = "fire";
-      fire.style.left = Math.random() * 100 + "vw";
-      fire.style.animationDelay = Math.random() * 5 + "s";
-      fire.style.background = `hsl(${Math.random() * 60 + 10}, 100%, 50%)`;
-      fire.style.width = fire.style.height = Math.random() * 8 + 5 + "px";
-      document.body.appendChild(fire);
-    }
-  </script>
-
-  <!-- 🎆 Confetti fireworks -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
   <div class="card">
-    <img src="https://i.ibb.co/RpbN3Q3/gguru.jpeg" alt="Guru Purnima Image" />
+    <a href="https://ibb.co/RpbN3Q3N" target="_blank" rel="noopener noreferrer">
+      <img src="https://i.ibb.co/RpbN3Q3N/download.jpg" alt="Guru Purnima Image" />
+    </a>
+
+    <!-- Ad Script Below Image -->
+    <div style="margin: 20px 0;">
+      <script type='text/javascript' src='//pl27082113.profitableratecpm.com/1a/a3/bb/1aa3bbb0fce1f619dd58ff7e0fe58b84.js'></script>
+    </div>
+
     <div id="countdown"></div>
-    <div id="greetingLine" style="color: brown; font-size: 18px; margin-bottom: 10px;">
-  👉पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं👈
-</div>
-    <h1><br>🙏 शुभ गुरु पूर्णिमा 🙏</h1>
+    <div id="greetingLine">👉 पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं 👈</div>
+    <h1>🙏 शुभ गुरु पूर्णिमा 🙏</h1>
     <p>गुरु हमारे जीवन के मार्गदर्शक होते हैं।</p>
     <p>इस शुभ दिन पर अपने गुरुओं को नमन करें।</p>
 
     <input type="text" id="nameInput" placeholder="अपना नाम लिखें..." />
-    <br/>
-    <button class="rainbow-btn" onclick="handleClick()">देखें</button>
     <div id="rainbowName"></div>
-    <button class="share-btn" onclick="sendToWhatsApp()">WhatsApp पर भेजें</button>
+
+    <button class="btn" onclick="generateLink()">👁️‍🗨️ नाम दिखाएं</button>
+    <button class="btn" onclick="copyLink()">📋 कॉपी लिंक</button>
+    <button class="share-btn" onclick="sendToWhatsApp()">📱 WhatsApp पर भेजें</button>
   </div>
 
   <script>
-    // ⏳ Countdown Timer
+    // Vercel site URL को बेस URL बनाएं
+    const baseURL = "https://festival-eight-sage.vercel.app/";
+
+    // Countdown Timer
     const countdownDiv = document.getElementById("countdown");
     const targetDate = new Date("2025-07-10T00:00:00").getTime();
-
-    const countdownInterval = setInterval(function () {
+    const countdownInterval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       if (distance < 0) {
         clearInterval(countdownInterval);
         countdownDiv.innerHTML = "🎉 शुभ गुरु पूर्णिमा!";
         return;
       }
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       countdownDiv.innerHTML = `🕒 ${days} दिन ${hours} घंटे ${minutes} मिनट ${seconds} सेकंड शेष`;
     }, 1000);
 
-    // 🎆 Confetti + Name show
-    function handleClick() {
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    window.onload = function () {
+      const sender = getQueryParam('sender');
+      if (sender) {
+        document.getElementById('rainbowName').innerText = `💐 ${sender} की ओर से शुभकामनाएं!`;
+        document.getElementById('nameInput').value = sender;
+      }
+    };
+
+    function generateLink() {
       const name = document.getElementById('nameInput').value.trim();
       if (name) {
-        document.getElementById("rainbowName").innerText = `💐 ${name} की ओर से शुभकामनाएं!`;
-
-        const duration = 3 * 1000;
-        const animationEnd = Date.now() + duration;
-        const defaults = { startVelocity: 25, spread: 300, ticks: 70, zIndex: 999 };
-
-        const origins = [
-          { x: 0.2, y: 0.8 },
-          { x: 0.8, y: 0.8 },
-          { x: 0.5, y: 0.2 },
-          { x: 0.5, y: 0.5 }
-        ];
-
-        const interval = setInterval(function () {
-          const timeLeft = animationEnd - Date.now();
-          if (timeLeft <= 0) {
-            clearInterval(interval);
-            return;
-          }
-
-          origins.forEach(origin => {
-            confetti({
-              ...defaults,
-              particleCount: 40,
-              origin: origin
-            });
-          });
-        }, 400);
+        document.getElementById('rainbowName').innerText = `💐 ${name} की ओर से शुभकामनाएं!`;
+        const newURL = `${baseURL}?sender=${encodeURIComponent(name)}`;
+        window.history.replaceState({}, '', newURL);
       } else {
         alert("कृपया पहले अपना नाम डालें।");
       }
     }
 
-    // 📲 WhatsApp share
+    function copyLink() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        const url = `${baseURL}?sender=${encodeURIComponent(name)}`;
+        navigator.clipboard.writeText(url).then(() => alert("✅ लिंक कॉपी हो गया!"));
+      } else {
+        alert("👤 पहले नाम दर्ज करके लिंक बनाएँ।");
+      }
+    }
+
     function sendToWhatsApp() {
       const name = document.getElementById('nameInput').value.trim();
       if (name) {
-        const imageUrl = "https://i.ibb.co/RpbN3Q3/gguru.jpeg";
-        const message = `👉 पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं 👈\n🙏 शुभ गुरु पूर्णिमा 🙏\nगुरु हमारे जीवन के दीपक हैं।\n\n💐 ${name} की ओर से शुभकामनाएं!\n📸 ${imageUrl}`;
-        const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
+        const url = `${baseURL}?sender=${encodeURIComponent(name)}`;
+        const message = `🙏 *गुरु पूर्णिमा की शुभकामनाएं!*\n\n👇 ${name} की ओर से विशेष बधाई:\n\n🔗 ${url}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
       } else {
-        alert("कृपया पहले नाम दर्ज करें।");
+        alert("👤 कृपया पहले नाम दर्ज करें और लिंक बनाएं।");
       }
     }
   </script>
