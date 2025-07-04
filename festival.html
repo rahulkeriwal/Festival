@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guru Purnima Wishes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #FFE5B4;
+      color: #4b2e0f;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 60px 20px;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+    .card img {
+      width: 100%;
+      max-height: 300px;
+      border-radius: 15px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    #countdown {
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #greetingLine {
+      color: brown;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #d35400;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 5px 0 15px;
+    }
+    #rainbowName {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-top: 20px;
+      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 3s infinite linear;
+      user-select: none;
+    }
+    @keyframes rainbow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    .btn {
+      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      background-size: 400% 400%;
+      animation: rainbowBG 3s linear infinite;
+      transition: box-shadow 0.3s ease;
+      box-shadow: 0 0 8px rgba(255,255,255,0.7);
+      margin-top: 10px;
+    }
+    .btn:hover {
+      box-shadow: 0 0 15px rgba(255,255,255,1);
+    }
+    @keyframes rainbowBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .share-btn {
+      background-color: #25D366 !important;
+      color: white !important;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 0 10px rgba(0, 128, 0, 0.4);
+    }
+    .share-btn:hover {
+      background-color: #1ebe5d !important;
+      box-shadow: 0 0 15px rgba(0, 128, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <a href="https://ibb.co/RpbN3Q3N" target="_blank" rel="noopener noreferrer">
+      <img src="https://i.ibb.co/RpbN3Q3N/download.jpg" alt="Guru Purnima Image" />
+    </a>
+
+    <!-- Ad Script Below Image -->
+    <div style="margin: 20px 0;">
+      <script type='text/javascript' src='//pl27082113.profitableratecpm.com/1a/a3/bb/1aa3bbb0fce1f619dd58ff7e0fe58b84.js'></script>
+    </div>
+
+    <div id="countdown"></div>
+    <div id="greetingLine">👉 पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं 👈</div>
+    <h1>🙏 शुभ गुरु पूर्णिमा 🙏</h1>
+    <p>गुरु हमारे जीवन के मार्गदर्शक होते हैं।</p>
+    <p>इस शुभ दिन पर अपने गुरुओं को नमन करें।</p>
+
+    <input type="text" id="nameInput" placeholder="अपना नाम लिखें..." />
+    <div id="rainbowName"></div>
+
+    <button class="btn" onclick="generateLink()">👁️‍🗨️ नाम दिखाएं</button>
+    <button class="btn" onclick="copyLink()">📋 कॉपी लिंक</button>
+    <button class="share-btn" onclick="sendToWhatsApp()">📱 WhatsApp पर भेजें</button>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const countdownDiv = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-10T00:00:00").getTime();
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        countdownDiv.innerHTML = "🎉 शुभ गुरु पूर्णिमा!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownDiv.innerHTML = `🕒 ${days} दिन ${hours} घंटे ${minutes} मिनट ${seconds} सेकंड शेष`;
+    }, 1000);
+
+    // Get Query Param
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // On Page Load: Show sender name if present
+    window.onload = function () {
+      const sender = getQueryParam('sender');
+      if (sender) {
+        document.getElementById('rainbowName').innerText = `💐 ${sender} की ओर से शुभकामनाएं!`;
+        document.getElementById('nameInput').value = sender;
+      }
+    };
+
+    // Generate Link with Name
+    function generateLink() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        document.getElementById('rainbowName').innerText = `💐 ${name} की ओर से शुभकामनाएं!`;
+        const newURL = `${window.location.origin}${window.location.pathname}?sender=${encodeURIComponent(name)}`;
+        window.history.replaceState({}, '', newURL);
+      } else {
+        alert("कृपया पहले अपना नाम डालें।");
+      }
+    }
+
+    // Copy Link to Clipboard
+    function copyLink() {
+      const url = window.location.href;
+      if (getQueryParam('sender')) {
+        navigator.clipboard.writeText(url).then(() => alert("✅ लिंक कॉपी हो गया!"));
+      } else {
+        alert("👤 पहले नाम दर्ज करके लिंक बनाएँ।");
+      }
+    }
+
+    // WhatsApp Share with Clickable Link Fix
+    function sendToWhatsApp() {
+      const name = getQueryParam('sender');
+      const url = window.location.href;
+      if (name) {
+        const message = `🙏 *गुरु पूर्णिमा की शुभकामनाएं!*\n\n👇 ${name} की ओर से विशेष बधाई:\n\n🔗 ${url}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+      } else {
+        alert("👤 कृपया पहले नाम दर्ज करें और लिंक बनाएं।");
+      }
+    }
+  </script>
+
+</body>
+</html>
