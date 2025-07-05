@@ -13,14 +13,16 @@
       text-align: center;
       overflow-x: hidden;
       position: relative;
-      padding: 60px 20px;
+      padding: 60px 20px 100px; /* नीचे एड के लिए padding */
+      min-height: 100vh;
+      box-sizing: border-box;
     }
     .card {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 20px;
       border-radius: 20px;
       max-width: 500px;
-      margin: auto;
+      margin: 20px auto 0 auto; /* ऊपर से थोड़ा space दिया */
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       position: relative;
       z-index: 2;
@@ -93,11 +95,6 @@
     .btn:hover {
       box-shadow: 0 0 15px rgba(255,255,255,1);
     }
-    @keyframes rainbowBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
     .share-btn {
       background-color: #25D366 !important;
       color: white !important;
@@ -114,19 +111,66 @@
       background-color: #1ebe5d !important;
       box-shadow: 0 0 15px rgba(0, 128, 0, 0.8);
     }
+
+    /* Header Ad Container */
+    #header-ad-container {
+      width: 320px;
+      height: 50px;
+      margin: 10px auto 0 auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 9999;
+      background: #fff;
+    }
+
+    /* Fixed bottom ad container */
+    #ad-container {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 50px;
+      background: #fff;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+      z-index: 9999;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+    }
+
+    /* Fireworks canvas full screen */
+    #fireworks-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9998;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header Ad Container: ऊपर एड -->
+  <div id="header-ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '1e6643a58777b8432d6ac9fffbf53d69',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/1e6643a58777b8432d6ac9fffbf53d69/invoke.js"></script>
+  </div>
 
   <div class="card">
     <a href="https://ibb.co/RpbN3Q3N" target="_blank" rel="noopener noreferrer">
       <img src="https://i.ibb.co/RpbN3Q3N/download.jpg" alt="Guru Purnima Image" />
     </a>
-
-    <!-- Ad Script Below Image -->
-    <div style="margin: 20px 0;">
-      <script type='text/javascript' src='//pl27082113.profitableratecpm.com/1a/a3/bb/1aa3bbb0fce1f619dd58ff7e0fe58b84.js'></script>
-    </div>
 
     <div id="countdown"></div>
     <div id="greetingLine">👉 पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं 👈</div>
@@ -138,12 +182,27 @@
     <div id="rainbowName"></div>
 
     <button class="btn" onclick="generateLink()">👁️‍🗨️ नाम दिखाएं</button>
-    <button class="btn" onclick="copyLink()">📋 कॉपी लिंक</button>
     <button class="share-btn" onclick="sendToWhatsApp()">📱 WhatsApp पर भेजें</button>
   </div>
 
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- Fixed Bottom Ad (अगर चाहिए तो) -->
+  <div id="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '1e6643a58777b8432d6ac9fffbf53d69',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/1e6643a58777b8432d6ac9fffbf53d69/invoke.js"></script>
+  </div>
+
   <script>
-    // Vercel site URL को बेस URL बनाएं
     const baseURL = "https://festival-eight-sage.vercel.app/";
 
     // Countdown Timer
@@ -188,16 +247,6 @@
       }
     }
 
-    function copyLink() {
-      const name = document.getElementById('nameInput').value.trim();
-      if (name) {
-        const url = `${baseURL}?sender=${encodeURIComponent(name)}`;
-        navigator.clipboard.writeText(url).then(() => alert("✅ लिंक कॉपी हो गया!"));
-      } else {
-        alert("👤 पहले नाम दर्ज करके लिंक बनाएँ।");
-      }
-    }
-
     function sendToWhatsApp() {
       const name = document.getElementById('nameInput').value.trim();
       if (name) {
@@ -208,6 +257,31 @@
         alert("👤 कृपया पहले नाम दर्ज करें और लिंक बनाएं।");
       }
     }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('fireworks-canvas');
+    const confettiInstance = confetti.create(canvas, {
+      resize: true,
+      useWorker: true
+    });
+
+    // Fireworks bursts every 2 seconds
+    setInterval(() => {
+      confettiInstance({
+        particleCount: 150,
+        spread: 360,
+        startVelocity: 60,
+        decay: 0.9,
+        gravity: 0.9,
+        ticks: 150,
+        origin: {
+          x: Math.random(),
+          y: Math.random() * 0.5 + 0.2
+        }
+      });
+    }, 2000);
   </script>
 
 </body>
