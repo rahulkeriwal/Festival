@@ -9,25 +9,15 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-      height: 100vh;
+      overflow-y: auto;
       background: #000;
       color: #fff;
     }
 
-    /* Utility */
     .hidden { display: none !important; }
-    .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
 
-    /* Landing Screen */
     #landing {
-      width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffff, #ffcc00);
       background-size: 800% 800%;
       animation: gradientShift 15s ease infinite, zoomPulse 4s ease-in-out infinite;
@@ -36,6 +26,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding-top: 80px;
     }
 
     #landing h1 {
@@ -43,6 +34,7 @@
       padding: 20px;
       background: rgba(0,0,0,0.5);
       border-radius: 15px;
+      margin-top: 60px;
     }
 
     .reveal-btn {
@@ -62,18 +54,16 @@
       box-shadow: 0 0 30px #ff0;
     }
 
-    /* Main Celebration Screen */
     #celebration {
-      position: absolute;
-      top: 0; left: 0;
       width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(to bottom right, #2b1055, #000428);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 20px;
+      padding-top: 100px;
+      padding-bottom: 60px;
     }
 
     .rakhi-img {
@@ -93,7 +83,6 @@
       border-radius: 15px;
       background: linear-gradient(45deg, #ff00cc, #00ffff);
       background-size: 200% 200%;
-      animation: disco 4s infinite linear, blink 2s infinite;
     }
 
     .greeting {
@@ -103,6 +92,8 @@
       background: rgba(255, 255, 255, 0.05);
       padding: 15px;
       border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
     }
 
     .highlight {
@@ -114,7 +105,7 @@
       margin-top: 15px;
       display: flex;
       flex-direction: column;
-      width: 80%;
+      width: 90%;
       max-width: 400px;
     }
 
@@ -137,6 +128,7 @@
       text-decoration: none;
       font-weight: bold;
       animation: pulse 2s infinite;
+      text-align: center;
     }
 
     .whatsapp-button {
@@ -150,6 +142,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      justify-content: center;
       cursor: pointer;
       animation: pulse 2s infinite alternate;
     }
@@ -191,8 +184,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Confetti + Decorations (CSS-based) */
-    .confetti, .flower, .balloon {
+    .flower, .balloon {
       position: absolute;
       z-index: 999;
       pointer-events: none;
@@ -221,9 +213,32 @@
       0% { top: -10%; opacity: 1; }
       100% { top: 110%; opacity: 0; }
     }
+
+    #adContainer {
+      position: fixed;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 🔼 Ad Script Starts Here -->
+  <div id="adContainer">
+    <script type="text/javascript">
+      atOptions = {
+        'key': '1e6643a58777b8432d6ac9fffbf53d69',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/1e6643a58777b8432d6ac9fffbf53d69/invoke.js"></script>
+  </div>
+  <!-- 🔽 Ad Script Ends Here -->
 
   <!-- Landing Screen -->
   <div id="landing">
@@ -231,7 +246,7 @@
     <button class="reveal-btn" onclick="startCelebration()">Click to Reveal</button>
   </div>
 
-  <!-- Main Celebration Page -->
+  <!-- Celebration -->
   <div id="celebration" class="hidden">
     <div class="festival-text">🎉 Happy Raksha Bandhan 🎉</div>
     <img src="rakhi.gif" class="rakhi-img" alt="Rakhi" />
@@ -243,7 +258,7 @@
       <input type="text" id="nameInput" placeholder="Enter your name" />
       <textarea id="msgInput" placeholder="Type your message"></textarea>
       <!-- 🔥🔥 PASTE YOUR AMAZON AFFILIATE LINK BELOW 🔥🔥 -->
-      <a href="https://amzn.to/4my0I5f" target="_blank" class="gift-button">🎁 Special Rakhi Gifts 🎁 👇</a>
+      <a href="https://amzn.to/3J3POWv" target="_blank" class="gift-button">🎁 Special Rakhi Gifts 🎁 👇</a>
       <button class="whatsapp-button" onclick="shareWhatsApp()">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" /> Share on WhatsApp
       </button>
@@ -267,10 +282,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const name = urlParams.get('name') || "Someone";
       const msg = urlParams.get('msg') || "aapko Raksha Bandhan ki bahut bahut badhai";
-
       document.getElementById('greetName').textContent = name;
       document.getElementById('greetMsg').textContent = msg;
-
       document.getElementById('nameInput').value = name;
       document.getElementById('msgInput').value = msg;
     }
@@ -310,12 +323,20 @@
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    // Auto-start celebration if URL has params
     if (window.location.search.includes("name") && window.location.search.includes("msg")) {
       window.addEventListener('DOMContentLoaded', () => {
         startCelebration();
       });
     }
   </script>
+<!-- 🔽 Bottom Scroll-Ad Banner -->
+<div style="width: 100%; text-align: center; margin-top: 50px;" id="bottomBanner">
+  <script async="async" data-cfasync="false" src="//pl27083809.profitableratecpm.com/725fb9b762649af1382b7c526bf1c227/invoke.js"></script>
+  <div id="container-725fb9b762649af1382b7c526bf1c227"></div>
+</div>
+
+<!-- Extra Bottom Ad -->
+<script async="async" data-cfasync="false" src="//pl27083809.profitableratecpm.com/725fb9b762649af1382b7c526bf1c227/invoke.js"></script>
+<div id="container-725fb9b762649af1382b7c526bf1c227"></div>
 </body>
 </html>
