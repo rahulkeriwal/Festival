@@ -1,269 +1,321 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guru Purnima Wishes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Raksha Bandhan</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #FFE5B4;
-      color: #4b2e0f;
-      text-align: center;
-      overflow-x: hidden;
-      position: relative;
-      padding: 60px 20px 100px;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-    .card {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 20px;
-      max-width: 500px;
-      margin: 20px auto 0 auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      position: relative;
-      z-index: 2;
-    }
-    .card img {
-      width: 100%;
-      max-height: 300px;
-      border-radius: 15px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    input {
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      width: 80%;
-      max-width: 300px;
-      margin: 15px 0;
-      font-size: 16px;
-    }
-    #countdown {
-      font-size: 20px;
-      color: black;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    #greetingLine {
-      color: brown;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    h1 {
-      font-size: 2em;
-      color: #d35400;
-      margin-bottom: 8px;
-    }
-    p {
-      font-size: 1.2em;
-      margin: 5px 0 15px;
-    }
-    #rainbowName {
-      font-size: 1.4em;
-      font-weight: bold;
-      margin-top: 20px;
-      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow 3s infinite linear;
-      user-select: none;
-    }
-    @keyframes rainbow {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-    .btn {
-      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
-      color: white;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      background-size: 400% 400%;
-      animation: rainbowBG 3s linear infinite;
-      transition: box-shadow 0.3s ease;
-      box-shadow: 0 0 8px rgba(255,255,255,0.7);
-      margin-top: 10px;
-    }
-    .btn:hover {
-      box-shadow: 0 0 15px rgba(255,255,255,1);
-    }
-    .share-btn {
-      background-color: #25D366 !important;
-      color: white !important;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 15px;
-      box-shadow: 0 0 10px rgba(0, 128, 0, 0.4);
-    }
-    .share-btn:hover {
-      background-color: #1ebe5d !important;
-      box-shadow: 0 0 15px rgba(0, 128, 0, 0.8);
-    }
-    #ad-container {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 320px;
-      height: 50px;
-      background: #fff;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
-      z-index: 9999;
-      border-radius: 10px 10px 0 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
+      height: 100vh;
+      background: #000;
+      color: #fff;
     }
-    #header-ad {
-      width: 100%;
-      max-width: 728px;
-      margin: 10px auto;
-      text-align: center;
-      z-index: 10000;
+
+    /* Utility */
+    .hidden { display: none !important; }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    #fireworks-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
+
+    /* Landing Screen */
+    #landing {
       width: 100vw;
       height: 100vh;
+      background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffff, #ffcc00);
+      background-size: 800% 800%;
+      animation: gradientShift 15s ease infinite, zoomPulse 4s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #landing h1 {
+      font-size: 2rem;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 15px;
+    }
+
+    .reveal-btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #0ff;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 0 20px #0ff;
+      color: #000;
+      cursor: pointer;
+      animation: pulse 2s infinite alternate;
+    }
+
+    .reveal-btn:hover {
+      box-shadow: 0 0 30px #ff0;
+    }
+
+    /* Main Celebration Screen */
+    #celebration {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #2b1055, #000428);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+
+    .rakhi-img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 20px;
+      animation: pulse 4s infinite;
+      box-shadow: 0 0 30px #0ff, 0 0 60px #f0f;
+    }
+
+    .festival-text {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      animation: disco 3s infinite alternate, blink 1.5s infinite alternate;
+      padding: 10px 20px;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #ff00cc, #00ffff);
+      background-size: 200% 200%;
+      animation: disco 4s infinite linear, blink 2s infinite;
+    }
+
+    .greeting {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .highlight {
+      color: #0ff;
+      animation: glow 2s infinite alternate, zoomPulse 3s infinite;
+    }
+
+    .input-group {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .input-group input, .input-group textarea {
+      background: #111;
+      border: 2px solid #0ff;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .gift-button {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #ff0080, #ff8c00);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-button {
+      margin-top: 10px;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      animation: pulse 2s infinite alternate;
+    }
+
+    .whatsapp-button:hover {
+      box-shadow: 0 0 15px #25D366;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+
+    @keyframes zoomPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #0ff; }
+      100% { text-shadow: 0 0 20px #ff0, 0 0 30px #f0f; }
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes disco {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Confetti + Decorations (CSS-based) */
+    .confetti, .flower, .balloon {
+      position: absolute;
+      z-index: 999;
       pointer-events: none;
-      z-index: 9998;
+    }
+
+    .flower {
+      font-size: 1.5rem;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .balloon {
+      width: 20px;
+      height: 30px;
+      border-radius: 50% 50% 45% 45%;
+      background: radial-gradient(circle, #0ff, #00f);
+      animation: floatDown 6s linear infinite;
+    }
+
+    @keyframes floatDown {
+      0% { top: -10%; opacity: 1; }
+      100% { top: 110%; opacity: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🟧 Header Ad -->
-  <div id="header-ad">
-    <script async="async" data-cfasync="false" src="//pl27083809.profitableratecpm.com/725fb9b762649af1382b7c526bf1c227/invoke.js"></script>
-    <div id="container-725fb9b762649af1382b7c526bf1c227"></div>
+  <!-- Landing Screen -->
+  <div id="landing">
+    <h1>Special Raksha Bandhan message waiting for you</h1>
+    <button class="reveal-btn" onclick="startCelebration()">Click to Reveal</button>
   </div>
 
-  <!-- 🎯 Main Card -->
-  <div class="card">
-    <a href="https://ibb.co/RpbN3Q3N" target="_blank" rel="noopener noreferrer">
-      <img src="https://i.ibb.co/RpbN3Q3N/download.jpg" alt="Guru Purnima Image" />
-    </a>
-
-    <div id="countdown"></div>
-    <div id="greetingLine">👉 पहले गुरु पूर्णिमा की हार्दिक शुभकामनाएं 👈</div>
-    <h1>🙏 शुभ गुरु पूर्णिमा 🙏</h1>
-    <p>गुरु हमारे जीवन के मार्गदर्शक होते हैं।</p>
-    <p>इस शुभ दिन पर अपने गुरुओं को नमन करें।</p>
-
-    <input type="text" id="nameInput" placeholder="अपना नाम लिखें..." />
-    <div id="rainbowName"></div>
-
-    <button class="btn" onclick="generateLink()">👁️‍🗨️ नाम दिखाएं</button>
-    <button class="share-btn" onclick="sendToWhatsApp()">📱 WhatsApp पर भेजें</button>
+  <!-- Main Celebration Page -->
+  <div id="celebration" class="hidden">
+    <div class="festival-text">🎉 Happy Raksha Bandhan 🎉</div>
+    <img src="rakhi.gif" class="rakhi-img" alt="Rakhi" />
+    <div class="greeting">
+      <span class="highlight" id="greetName">Someone</span> ki taraf se:<br />
+      <span id="greetMsg">aapko Raksha Bandhan ki bahut bahut badhai</span>
+    </div>
+    <div class="input-group">
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <textarea id="msgInput" placeholder="Type your message"></textarea>
+      <!-- 🔥🔥 PASTE YOUR AMAZON AFFILIATE LINK BELOW 🔥🔥 -->
+      <a href="https://amzn.to/4my0I5f" target="_blank" class="gift-button">🎁 Special Rakhi Gifts 🎁 👇</a>
+      <button class="whatsapp-button" onclick="shareWhatsApp()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" /> Share on WhatsApp
+      </button>
+    </div>
   </div>
 
-  <canvas id="fireworks-canvas"></canvas>
-
-  <!-- 🔽 Bottom Ad -->
-  <div id="ad-container">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '1e6643a58777b8432d6ac9fffbf53d69',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/1e6643a58777b8432d6ac9fffbf53d69/invoke.js"></script>
-  </div>
+  <audio id="bgMusic" src="rakhi.mp3" loop></audio>
 
   <script>
-    const baseURL = "https://festival-eight-sage.vercel.app/";
-    const countdownDiv = document.getElementById("countdown");
-    const targetDate = new Date("2025-07-10T00:00:00").getTime();
+    const music = document.getElementById('bgMusic');
 
-    const countdownInterval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      if (distance < 0) {
-        clearInterval(countdownInterval);
-        countdownDiv.innerHTML = "🎉 शुभ गुरु पूर्णिमा!";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownDiv.innerHTML = `🕒 ${days} दिन ${hours} घंटे ${minutes} मिनट ${seconds} सेकंड शेष`;
-    }, 1000);
+    function startCelebration() {
+      document.getElementById('landing').classList.add('hidden');
+      document.getElementById('celebration').classList.remove('hidden');
+      music.play();
+      launchDecorations();
+      parseParamsOrInput();
+    }
 
-    function getQueryParam(param) {
+    function parseParamsOrInput() {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
+      const name = urlParams.get('name') || "Someone";
+      const msg = urlParams.get('msg') || "aapko Raksha Bandhan ki bahut bahut badhai";
+
+      document.getElementById('greetName').textContent = name;
+      document.getElementById('greetMsg').textContent = msg;
+
+      document.getElementById('nameInput').value = name;
+      document.getElementById('msgInput').value = msg;
     }
 
-    window.onload = function () {
-      const sender = getQueryParam('sender');
-      if (sender) {
-        document.getElementById('rainbowName').innerText = `💐 ${sender} की ओर से शुभकामनाएं!`;
-        document.getElementById('nameInput').value = sender;
-      }
-    };
+    function shareWhatsApp() {
+      const name = document.getElementById('nameInput').value || "Someone";
+      const msg = document.getElementById('msgInput').value || "aapko Raksha Bandhan ki bahut bahut badhai";
+      const url = `${window.location.origin}${window.location.pathname}?name=${encodeURIComponent(name)}&msg=${encodeURIComponent(msg)}`;
+      const waMsg = `${name} ki taraf se: ${msg}%0A${url}`;
+      window.open(`https://wa.me/?text=${waMsg}`, '_blank');
+    }
 
-    function generateLink() {
-      const name = document.getElementById('nameInput').value.trim();
-      if (name) {
-        document.getElementById('rainbowName').innerText = `💐 ${name} की ओर से शुभकामनाएं!`;
-        const newURL = `${baseURL}?sender=${encodeURIComponent(name)}`;
-        window.history.replaceState({}, '', newURL);
-      } else {
-        alert("कृपया पहले अपना नाम डालें।");
+    function launchDecorations() {
+      const emojis = ["🌸", "💐", "🥀", "🌹", "🌺", "🌼", "🌻", "🌟", "🌈"];
+      for (let i = 0; i < 20; i++) {
+        let flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(flower);
+      }
+
+      for (let i = 0; i < 10; i++) {
+        let balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.top = '-50px';
+        balloon.style.background = `radial-gradient(circle, ${randomNeon()}, ${randomNeon()})`;
+        balloon.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(balloon);
       }
     }
 
-    function sendToWhatsApp() {
-      const name = document.getElementById('nameInput').value.trim();
-      if (name) {
-        const url = `${baseURL}?sender=${encodeURIComponent(name)}`;
-        const message = `🙏 *गुरु पूर्णिमा की शुभकामनाएं!*\n\n👇 ${name} की ओर से विशेष बधाई:\n\n🔗 ${url}`;
-        window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
-      } else {
-        alert("👤 कृपया पहले नाम दर्ज करें और लिंक बनाएं।");
-      }
+    function randomNeon() {
+      const colors = ['#0ff', '#f0f', '#ff0', '#0f0', '#00f', '#f00'];
+      return colors[Math.floor(Math.random() * colors.length)];
     }
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script>
-    const canvas = document.getElementById('fireworks-canvas');
-    const confettiInstance = confetti.create(canvas, {
-      resize: true,
-      useWorker: true
-    });
-
-    setInterval(() => {
-      confettiInstance({
-        particleCount: 150,
-        spread: 360,
-        startVelocity: 60,
-        decay: 0.9,
-        gravity: 0.9,
-        ticks: 150,
-        origin: {
-          x: Math.random(),
-          y: Math.random() * 0.5 + 0.2
-        }
+    // Auto-start celebration if URL has params
+    if (window.location.search.includes("name") && window.location.search.includes("msg")) {
+      window.addEventListener('DOMContentLoaded', () => {
+        startCelebration();
       });
-    }, 2000);
+    }
   </script>
-
 </body>
 </html>
